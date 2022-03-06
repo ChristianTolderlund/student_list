@@ -1,0 +1,301 @@
+/* font */
+@font-face {
+    font-family: "Magic School One";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Magic School One"),
+      url("https://fonts.cdnfonts.com/s/28801/MagicSchoolOne.woff") format("woff");
+  }
+
+/* General */
+* {
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: "Magic School One";
+    font-size: 75px;
+    margin: 0;
+  }
+  h2 {
+    font-family: "Magic School One";
+    font-size: 40px;
+    margin: 0;
+  }
+
+  /* flagss */
+  #house_flags {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .flags {
+    padding: 10px;
+    border-radius: 10px;
+;
+  }
+  
+  .flags img {
+    max-width: 5rem;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #gryff_total,
+  #slyth_total,
+  #huff_total,
+  #raven_total {
+    text-align: center;
+  }
+  
+  /* List information */
+  
+  #list_info {
+    padding: 0.8rem;
+
+    font-size: 20px;
+  }
+  
+  #list_info h3 {
+    text-align: center;
+    margin: 0;
+  }
+  
+  .numbers {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  [data-field="inquisitorial"] {
+    text-align: center;
+    cursor: pointer;
+    width: 20px;
+  }
+  
+  [data-field="prefect"] {
+    text-align: center;
+    cursor: pointer;
+    width: 20px;
+  }
+
+  #sorting th.sortby {
+    text-decoration: underline;
+  }
+
+  #students_list tr:nth-child(even) {
+    background-color: #c2bfbf;
+  }
+  
+  #students_list tr:hover {
+    background-color: rgb(255, 254, 254);
+  }
+  
+  #students_list th {
+    background-color: #25500d;
+    color: rgb(253, 143, 0);
+    cursor: pointer;
+  }
+  
+  #students_list {
+    font-family: "Magic School One";
+    font-size: 30px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #students_list td,
+  #students_list th {
+    border: 4px solid #25500d;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #students_list tr {
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* Pop up */
+  
+  .pop_up {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .popup_content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -80%);
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 530px;
+    height: 330px;
+  }
+
+ .images img {
+    padding: 10px;
+    height: 10rem;
+    width: 10rem;
+  }
+  
+  #student_popup_info {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+  
+  #expel_btn {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+  button{
+    padding: 0.5rem;
+  }
+  .info_section {
+    margin-top: 0.5rem;
+  }
+  .info_section #fullname {
+    font-size: 1.5rem;
+    padding-top: 100px;
+  }
+  .info_section h4 {
+    display: inline;
+    font-size: 1.2rem;
+    margin: 1vw;
+  }
+
+  p {
+    display: inline;
+    margin: 1rem;
+  }
+
+  .student_status {
+    padding: 10px;
+  }
+.title_status{
+    font-size: 1.2rem;
+  }
+  .student_status h4 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  .student_status p {
+    margin: 0 0 0.5rem 0;
+  }  
+  .student_status p {
+    font-size: 1.1rem;
+  }
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 10px 0 0;
+  }
+  
+  .close:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+  /* dropdown */
+  .dropdown_menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    cursor: pointer;
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    z-index: 1;
+    text-align: left;
+  }
+  
+  .dropdown-content_status {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 160px;
+    z-index: 1;
+    text-align: left;
+  }
+  
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filter_house,
+  .filter_status {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  .filter_house:hover {
+    background-color: rgba(201, 193, 193, 0.568);
+  }
+  
+  .filter_status:hover {
+    background-color: rgba(201, 193, 193, 0.568);
+  }
+
+  /* filter & feedback */
+  
+  #filter_interface {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  
+  .dropdowns {
+    gap: 1rem;
+    display: flex;
+  }
+  
+  #filter_btn {
+    margin-left: 1.5rem;
+  }
+  
+  .search {
+    display: flex;
+  }
+  
+  #messeage {
+    margin: 0;
+    padding-top: 1rem;
+  }
+  
+  #error h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 1rem;
+  }

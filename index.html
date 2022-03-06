@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hogwarts Student List</title>
+  </head>
+  <body>
+    <h1>_~- CLASS OF 1991 -~_</h1>
+    <article id="list_info">
+    <h3>Amount of enrolled / expelled students</h3>
+    <div class="numbers">
+      <h4 id="total_enrolled"></h4>
+      <h4 id="total_expelled"></h4>
+    </div>
+  </article>
+    <section id="house_flags">
+      <article class="flags">
+        <div class="center">
+          <img src="emblem/gryffindor-flag-emblem.png" alt="gry_emblem" />
+        </div>
+        <h3 class="center">Gryffindor</h3>
+        <h5 class="center" >Amount of students:</h5>
+        <h2 id="gryff_total">0</h2>
+      </article>
+      <article class="flags">
+        <div class="center">
+          <img src="emblem/slytherin-flag-emblem.png" alt="sly_emblem" />
+        </div>
+        <h3 class="center">Slytherin</h3>
+        <h5 class="center">Amount of students:</h5>
+        <h2 id="slyth_total">0</h2>
+      </article>
+      <article class="flags">
+        <div class="center">
+          <img src="emblem/hufflepuff-flag-emblem.png" alt="huf_emblem.png" />
+        </div>
+        <h3 class="center">Hufflepuff</h3>
+        <h5 class="center">Amount of students:</h5>
+        <h2 id="huff_total">0</h2>
+      </article>
+      <article class="flags">
+        <div class="center">
+          <img src="emblem/ravenclaw-flag-emblem.png" alt="rav_emblem" />
+        </div>
+        <h3 class="center">Ravenclaw</h3>
+        <h5 class="center">Amount of students:</h5>
+        <h2 id="raven_total">0</h2>
+      </article>
+    </section>
+    <h2>Filtering:</h2>
+
+    <section id="filter_interface">
+      <article class="dropdowns">
+        <div class="dropdown_house">
+          <button class="dropbtn">Filter by house</button>
+          <div class="dropdown-content">
+              <button class="house_filter" data-action="filter" data-filter="*">All houses</button>
+            <button class="house_filter" data-action="filter" data-filter="Gryffindor">Gryffindor</button>
+            <button class="house_filter" data-action="filter" data-filter="Slytherin">Slytherin</button>
+            <button class="house_filter" data-action="filter" data-filter="Hufflepuff">Hufflepuff</button>
+            <button class="house_filter" data-action="filter" data-filter="Ravenclaw">Ravenclaw</button>
+          </div>
+        </div>
+
+        <div class="dropdown_status">
+          <button class="dropbtn">Filter by student status</button>
+          <div class="dropdown-content_status">
+            <button class="status_filter" data-action="filter" data-filter="*">Not expelled</button>
+            <button class="status_filter" data-action="filter" data-filter="Expelled">Expelled</button>
+            <button class="status_filter" data-action="filter" data-filter="Prefect">Prefects</button>
+            <button class="status_filter" data-action="filter" data-filter="Inquisitorial">Part of inquisitorial squad</button>
+          </div>
+        </div>
+      </article>
+
+      <div class="search">
+        <input type="text" placeholder="Search.." name="search" id="search_input" />
+        <button id="clear_btn">X</button>
+      </div>
+    </section>
+
+    <table id="students_list">
+      <thead>
+        <tr id="sorting">
+          <th data-action="sort" data-sort-direction="asc" data-sort="firstName">Firstname</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="lastName">Lastname</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="prefect">Prefect</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="inquisitorial ">Inquisitorial</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div id="error"><h2></h2></div>
+    <template id="student">
+      <tr>
+        <td data-field="firstname">Firstname</td>
+        <td data-field="lastname">Lastname</td>
+        <td data-field="house">House</td>
+        <td data-field="prefect">⭐</td>
+        <td data-field="inquisitorial">🟥</td>
+      </tr>
+    </template>
+
+    <div class="pop_up">
+      <div class="popup_content">
+        <span class="close">&times;</span>
+        <section id="student_popup_info">
+        <div class="info_section">
+            <div class="full">
+            <h4 id="fullname"></h4>
+          </div>
+          <div class="gen">
+            <h4>Gender:</h4>
+            <h4 id="gender" data-sort="gender">Gender</h4>
+          </div>
+          <div class="hou">
+            <h4>House:</h4>
+            <h4 id="house"></h4>
+          </div>
+          <div class="blo">
+            <h4>Blood-status:</h4>
+            <h4 id="blood"></h4>
+          </div>
+        </div>
+        <div class="student_status">
+          <h4 class="title_status">Student status:</h4>
+          <div class="blood_text">
+          </div>
+          <div class="flex_popup">
+            <p id="expel_stat">Expelled:</p>
+            <button id="exp"></button>
+          </div>
+          <div class="flex_popup">
+            <p id="prefect_stat">Prefect:</p>
+            <button id="pre"></button>
+          </div>
+          <div class="flex_popup">
+            <p id="squad_stat">Inquisitor:</p>
+            <button id="ins"></button>
+          </div>
+        </div>
+        <div class="images center">
+          <img  src="" alt="" />
+          <img  id="house_crest" src="" alt="" />
+        </div>
+      </section>
+        <button id="expel_btn">Expel</button>
+      </div>
+    </div>
+
+    <div id="messeage_popup">
+      <p id="messeage"></p>
+    </div>
+    <script src="js.js"></script>
+  </body>
+</html>
